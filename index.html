@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web to Screenshot</title>
+    <!-- css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+</head>
+<body>
+
+    
+    
+    <main class=" ">
+    <!-- <main class="d-flex flex-column justify-content-center "> -->
+        <div>
+            <h1 class="text-center display-1 text-uppercase">Screenshot </h1>
+            <span class="text-center h6 d-block text-uppercase">taker..</span>
+        </div>
+        
+
+        <!-- search form  -->
+        <div class="w-sm-25 w-25 mx-auto">
+            <div class="input-group mb-3  ">
+                <input id="website-url-input" type="text" class="form-control" placeholder="give website url here...." >
+                <button class="input-group-text" id="basic-addon2" onclick="displayScreenshot()">CAPTURE</button>
+            </div>
+        </div>
+        
+        <!-- search form ./ -->
+
+        <!-- <button onclick="displayPreview()">Load website 2</button> -->
+        <section id='image-container' class="d-flex flex-wrap justify-content-center">
+            <!-- <div class="parent position-relative">
+                <img src="loader.gif" alt="" srcset="" class="position-absolute" width="300px";height="400">
+                <div class="d-flex flex-column align-items-center position-absolute" >
+                    <img src="https://api.screenshotmachine.com?key=8beab1&url=https%3A%2F%2Fshafiq-portfolio.netlify.app%2Fecommerce-website.html&device=phone&dimension=480x800&format=png" alt="" width="300px";height="400";>
+                    <p>shafiq-portfolio.netlify.app</p>
+                </div>
+            </div> -->
+            
+            <!-- <div class="d-flex flex-column align-items-center" style="">
+                <img src="https://api.screenshotmachine.com?key=8beab1&url=https%3A%2F%2Fshafiq-portfolio.netlify.app%2Fecommerce-website.html&device=phone&dimension=480x800&format=png" alt="" width="300px";height="400";>
+                <button class="px-3 py-2 bg-info rounded mt-5 text-white">shafiq-portfolio.netlify.app</button>
+            </div> -->
+            
+        </section>
+    </main>
+    <!-- js -->
+    <script src="app.js"></script>
+</body>
+</html>
