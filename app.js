@@ -48,6 +48,38 @@ function displayPreview(imgUrl='shafiq-portfolio.netlify.app/ecommerce-website.h
 
 function displayScreenshot (imgUrl='shafiq-portfolio.netlify.app/ecommerce-website.html'){
 
+
+    // get radio button value 
+    const deviceSelect = document.getElementsByName('device');
+    let selectedDevice = '';
+    let deviceConfig = '';
+    let imgSize = '';
+    for(const device of deviceSelect){
+        // console.log(device)
+        if(device.checked){
+           console.log(device.value)
+        //    selectedDevice = device.value;
+           
+            if(device.value == 'mobile'){
+                deviceConfig = 'device=phone&dimension=480x800'
+                imgSize ='width="300px";height="400"'
+            }
+            else{
+                deviceConfig = 'device=desktop&dimension=1920x1080'
+                imgSize ='width="780px";height="400"'
+            }
+            break;
+        }
+        
+    }
+
+    // based on device configure device settings 
+    // selectedDevice
+
+    // device=phone&dimension=480x800
+    // &device=desktop&dimension=1024x768
+
+
     const websiteUrlInput = document.getElementById('website-url-input');
     if(websiteUrlInput.value){
         imgUrl = websiteUrlInput.value ; 
@@ -58,10 +90,10 @@ function displayScreenshot (imgUrl='shafiq-portfolio.netlify.app/ecommerce-websi
     const filtered_url = imgUrl.replace('/','%2F')
 
     const addImage = document.createElement('div')
-    addImage.innerHTML= `<div class="parent ">
+    addImage.innerHTML= `<div class="parent content-bg ">
     <div class="d-flex flex-column align-items-center position-relative" >
-            <img src="loader.gif" alt="" srcset="" class="position-absolute" width="300px";height="400">
-            <img class="position-relative" src="https://api.screenshotmachine.com?key=8beab1&url=https%3A%2F%2F${filtered_url}&device=phone&dimension=480x800&format=png" alt="" width="300px";height="400";>
+            <img src="loader.gif" alt="" srcset="" class="position-absolute" width="300px";height="400">   
+            <img style="border-radius:10px" class="position-relative" src="https://api.screenshotmachine.com?key=8beab1&url=https%3A%2F%2F${filtered_url}&${deviceConfig}&format=png" alt="" ${imgSize};>
             <p>${imgUrl}</p>
         </div>
     </div>`

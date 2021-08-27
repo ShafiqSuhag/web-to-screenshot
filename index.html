@@ -7,7 +7,7 @@
     <title>Web to Screenshot</title>
     <!-- css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -22,9 +22,17 @@
         
 
         <!-- search form  -->
-        <div class="w-sm-25 w-25 mx-auto">
+        <div class="w-sm-25 w-50 mx-auto">
             <div class="input-group mb-3  ">
                 <input id="website-url-input" type="text" class="form-control" placeholder="give website url here...." >
+                
+                <input type="radio" class="btn-check" name="device" id="success-outlined" autocomplete="off" checked value="desktop">
+                <label class="btn btn-outline-success" for="success-outlined">Desktop</label>
+
+                <input type="radio" class="btn-check" name="device" id="danger-outlined" autocomplete="off" value="mobile">
+                <label class="btn btn-outline-warning" for="danger-outlined">Mobile</label>
+                
+                
                 <button class="input-group-text" id="basic-addon2" onclick="displayScreenshot()">CAPTURE</button>
             </div>
         </div>
@@ -49,6 +57,7 @@
         </section>
     </main>
     <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="app.js"></script>
 </body>
 </html>
