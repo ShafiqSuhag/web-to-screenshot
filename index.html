@@ -22,18 +22,18 @@
         
 
         <!-- search form  -->
-        <div class="w-sm-25 w-50 mx-auto">
+        <div class="col-10 col-md-6 mx-auto ">
             <div class="input-group mb-3  ">
-                <input id="website-url-input" type="text" class="form-control" placeholder="give website url here...." >
+                <input id="website-url-input" type="text" class="form-control" placeholder="give website url here...." onKeyup="eventForEnter(event)" >
                 
-                <input type="radio" class="btn-check" name="device" id="success-outlined" autocomplete="off" checked value="desktop">
+                <input type="radio" class="btn-check" name="device" id="success-outlined" autocomplete="off"  value="desktop">
                 <label class="btn btn-outline-success" for="success-outlined">Desktop</label>
 
-                <input type="radio" class="btn-check" name="device" id="danger-outlined" autocomplete="off" value="mobile">
+                <input type="radio" class="btn-check" name="device" id="danger-outlined" autocomplete="off" value="mobile" checked>
                 <label class="btn btn-outline-warning" for="danger-outlined">Mobile</label>
                 
                 
-                <button class="input-group-text" id="basic-addon2" onclick="displayScreenshot()">CAPTURE</button>
+                <button class="input-group-text" id="basic-addon2" onclick="displayScreenshot()" >CAPTURE</button>
             </div>
         </div>
         
