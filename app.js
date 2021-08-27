@@ -9,8 +9,10 @@ function startWithHttp(url){
     console.log(url.search('http://'))
    if(url.search('http://')==0 || url.search('https://')==0){
        console.log(url, 'found')
+       return url ; 
    }else{
     console.log(url, 'not found', 'http://'+url )
+    return 'http://'+url ; 
    }
 }
 function eventForEnter(event){
@@ -29,7 +31,7 @@ function displayScreenshot (imgUrl=''){
         return;
     }
 
-    startWithHttp(imgUrl);
+    imgUrl=  startWithHttp(imgUrl);
     // return;
     // console.log(imgUrl)
     // const validateUrl = isValidHttpUrl(imgUrl);
@@ -74,13 +76,13 @@ function displayScreenshot (imgUrl=''){
     filtered_url = filtered_url.replace(':','%3A')
 
     const addImage = document.createElement('div')
-    addImage.innerHTML= `<div class="parent content-bg ">
+    addImage.innerHTML= `<a href="${imgUrl}" target="_blank"> <div class="parent content-bg " >
     <div class="d-flex flex-column align-items-center position-relative" >
             <img src="loader.gif" alt="" srcset="" class="position-absolute" width="300px";height="400">   
-            <img style="border-radius:10px" class="position-relative" src="https://api.screenshotmachine.com?key=8beab1&url=https%3A%2F%2F${filtered_url}&${deviceConfig}&format=png" alt="" ${imgSize};>
+            <img style="border-radius:10px" class="position-relative" src="https://api.screenshotmachine.com?key=8beab1&url=${filtered_url}&${deviceConfig}&format=png" alt="" ${imgSize};>
             <p>${imgUrl}</p>
         </div>
-    </div>`
+    </div></a>`
     imageContainer.appendChild(addImage)
 
     websiteUrlInput.value = '';
